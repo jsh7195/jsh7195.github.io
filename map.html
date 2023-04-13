@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>게임 마을 지도</title>
+    <meta charset="utf-8" />
+
+    <!-- Leaflet 라이브러리 로드 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <style>
+        #map {
+            height: 600px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        #image {
+            width: 800px;
+            height: 600px;
+            position: absolute;
+            left: 50%;
+            margin-left: -400px;
+            top: 50px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map" style="height: 600px;"></div>
+    <img id="image" src="testimg.png" />
+
+    <script>
+        // Leaflet을 초기화합니다.
+        // Leaflet을 초기화합니다.
+        var map = L.map('map').setView([0, 0], 0);
+
+        // 이미지의 경로와 크기를 설정합니다.
+        var imageUrl = 'testimg.png';
+        var imageBounds = [[0, 0], [600, 800]];
+
+        // 이미지 오버레이를 추가합니다.
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+        // 마을 위치와 이름을 정의합니다.
+        var markers = [
+            {
+                lat: 100,
+                lng: 200,
+                name: '마을 이름1'
+            },
+            {
+                lat: 300,
+                lng: 400,
+                name: '마을 이름2'
+            },
+            {
+                lat: 500,
+                lng: 600,
+                name: '마을 이름3'
+            }
+        ];
+
+        // 마커 아이콘을 정의합니다.
+        var icon = L.icon({
+            iconUrl: '마커이미지경로',
+            iconSize: [32, 37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -37]
+        });
+
+        // 마커를 추가합니다.
+        for (var i = 0; i < markers.length; i++) {
+            L.marker([markers[i].lat, markers[i].lng], { icon: icon }).addTo(map)
+                .bindPopup(markers[i].name);
+        }
+    </script>
+</body>
+
+</html>
