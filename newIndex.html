@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프라시아</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCLM0CTXBB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VCLM0CTXBB');
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1338813848148433"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .component-container {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            /* 2개의 동일한 폭으로 그리드 형태로 배치 */
+            grid-gap: 10px;
+            /* 요소들 사이의 간격 */
+        }
+
+        li {
+            list-style: none;
+            /* 리스트 마커 제거 */
+        }
+
+        .list-group-item:hover {
+            cursor: pointer;
+        }
+
+        .list-group-item.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <!-- Main Content -->
+        <div class="row">
+
+            <!-- Left Sidebar -->
+            <div class="col-sm-3 bg-light border-right">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" data-href="bossCheck.html">보탐 기록</li>
+                    <li class="list-group-item" data-href="map.html">지도</li>
+                    <li class="list-group-item">Component 3</li>
+                    <li class="list-group-item">Component 4</li>
+                </ul>
+
+            </div>
+
+            <!-- Main Area -->
+            <div class="col-sm-9" id="main-area">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('.list-group-item').on('click', function () {
+                $('.list-group-item').removeClass('active');
+                $(this).addClass('active');
+                var href = $(this).data('href');
+                location.href = href;
+            });
+
+            $('.list-group-item').on('mouseenter', function () {
+                $(this).addClass('hover');
+            }).on('mouseleave', function () {
+                $(this).removeClass('hover');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

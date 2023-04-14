@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>게임 마을 지도</title>
+    <meta charset="utf-8" />
+
+    <!-- Leaflet 라이브러리 로드 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <style>
+        #map {
+            height: 600px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map" style="height: 600px;"></div>
+
+    <script>
+        // Leaflet을 초기화합니다.
+        var map = L.map('map').setView([0, 0], 0);
+
+        // 마을 위치와 이름을 정의합니다.
+        var markers = [
+            {
+                lat: 1,
+                lng: 1,
+                name: '마을 이름1'
+            },
+            {
+                lat: 300,
+                lng: 400,
+                name: '마을 이름2'
+            },
+            {
+                lat: 500,
+                lng: 600,
+                name: '마을 이름3'
+            }
+        ];
+
+        // 마커 아이콘을 정의합니다.
+        var icon = L.icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            iconSize: [32, 37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -37]
+        });
+
+        // 마커를 추가합니다.
+        for (var i = 0; i < markers.length; i++) {
+            L.marker([markers[i].lat, markers[i].lng], { icon: icon }).addTo(map)
+                .bindPopup(markers[i].name);
+        }
+    </script>
+</body>
+
+</html>
