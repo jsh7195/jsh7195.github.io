@@ -1,0 +1,8 @@
+# Handle React routing, return all requests to React app
+# Ensure your GitHub Pages basename is set to your repository name (e.g. /my-react-app/)
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]
+
