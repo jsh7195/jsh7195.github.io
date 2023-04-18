@@ -85,7 +85,7 @@ body {
   /* 요소들 사이의 간격 */
 }
 
-#boss-list > li {
+#boss-list>li {
   list-style: none;
   /* 리스트 마커 제거 */
 }
@@ -121,8 +121,10 @@ body {
 }
 
 a.c_navlink {
-  text-decoration: none; /* 밑줄 없애기 */
-  color: black; /* 링크 색상 변경 */
+  text-decoration: none;
+  /* 밑줄 없애기 */
+  color: black;
+  /* 링크 색상 변경 */
 }
 
 .m-r {
@@ -140,6 +142,7 @@ a.active {
 #main-area {
   max-width: 800px;
   max-height: 800px;
+  margin-bottom: 100px;
 }
 
 .leaflet-container {
@@ -149,7 +152,8 @@ a.active {
 .boss-tooltip {
   display: block !important;
   z-index: 9999;
-  pointer-events: auto; /* 변경 */
+  pointer-events: auto;
+  /* 변경 */
   text-align: center;
   font-weight: bold;
   font-size: 14px;
@@ -166,4 +170,10 @@ a.active {
   border: 1px solid #ddd;
   border-radius: 3px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  position: relative;
+  bottom: -100px;
+  /* 예시로 설정한 값 */
 }
